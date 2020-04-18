@@ -68,7 +68,12 @@ node 8000 - length 8 - head 000032454c7a6ee942e7730ad38f33a311b4264e76f7f683bb88
   
 a) Why do so many more blocks appear in the list of all those known in the system? Why are there so many with the same index?  
 
-The variable DIFFICULTY is used to set the mining difficulty. In this case, this is implemented by checking for a block whose hash beats the difficulty parameter by having at least that many leading zeros. If a block that fulfills the difficulty parameter is not found within a certain limit of tries, then find_block returns (None, None). So, when the difficulty is lowered, 
+The variable DIFFICULTY is used to set the mining difficulty. In this case, this is implemented by checking for a block whose hash beats the difficulty parameter by having at least that many leading zeros. If a block that fulfills the difficulty parameter is not found within a certain limit of tries, then find_block returns (None, None). So, when the difficulty is higher, it takes longer to find acceptable blocks. When the difficulty is lower, it is much faster.  
 
-b) Do most or all of the nodes all exit with the same head of the chain? If so, how? If not, why can’t they agree?  
+This affects the blocks that are mined, because, if the difficulty is lowered from 17 to 10, then it takes a shorter amount of time to mine blocks, and thus more are mined. More blocks are acceptable until the desired chain length is reached (which was not changed).
 
+There are so many blocks with the same index because when update_head is called, self.head is updated to the current one if it is the head of the current longest chain. In the mine() function, the block is added to self.blocks. So these blocks whose indexes are printed are all the blocks in that node. This means that in contrast to the DIFFICULTY=17 run, where there were fewer chains, with the difficulty lowered to 10, the genesis block is the parent for many other blocks, leading to multiple chains coming from the same parent. This also explains why there are more total blocks. Because it has produced many chains in parallel, many of them have the same index number, as they are not in the same chain.  
+
+b) Do most or all of the nodes all exit with the same head of the chain? If so, how? If not, why can’t they agree?   
+
+Most of the nodes exit with a different head. As touched upon in my answer to question 1, lowering the difficulty has produced multiple chains branching from the same parent. Self.head gets updated when the current chain is the longest one, but there are multiple chains of the same length. So, the nodes cannot agree, because even though these chains all have different heads, they fulfill the length parameter.

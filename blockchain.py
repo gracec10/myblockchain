@@ -17,7 +17,7 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey,
 
 # global constants
 NNODES = 6
-DIFFICULTY = 17 # larger number = takes (exponentially) longer to mine
+DIFFICULTY = 10 # larger number = takes (exponentially) longer to mine
 STOPPING   = 8  # how long the chain should get before we stop
 
 
