@@ -1,71 +1,74 @@
+# myblockchain  
+Grace Cheung  
+gvc8  
+
+1)  
+
 node 8000 waiting for genesis block  
 node 8003 waiting for genesis block  
-node 8004 waiting for genesis block  
 node 8002 waiting for genesis block  
+node 8004 waiting for genesis block  
 node 8005 waiting for genesis block  
 node 8001 broadcasting  
-node 8002 broadcasting  
-node 8002 broadcasting  
-node 8002 broadcasting  
-node 8003 broadcasting  
-node 8003 - length 8 - head 00002124866efedcf5741651f24d732381f1ad85926ffafd56f6e3a27e182a1d  
 node 8005 broadcasting  
-node 8005 - length 9 - head 00003634f0edef4cef4fc61e0315894cb69df6ebfbac141febaa7747b0d98fa0  
-node 8000 broadcasting  
-node 8000 - length 10 - head 000044d9791d594f731b5f950f91749983d7ec0d5fa5b58de546893f809770d0  
-node 8004 broadcasting  
-node 8004 - length 11 - head 000028ff617837650daec28e931a76e9b7ab0fa0f529aa868ff49f6ef9f95775  
-node 8002 broadcasting  
-node 8002 - length 9 - head 00002575f1f45830dd3616715cabb0a31ef3b6e655f8ffe6ddc9668fed883425  
 node 8001 broadcasting  
-node 8001 - length 16 - head 00001395fc8e12c79d906756eb6d23c0f392012d61f9a2b082718751e916428a  
-{'00001395fc8e12c79d906756eb6d23c0f392012d61f9a2b082718751e916428a': {'header': {'index': 1,  
-                                                                                 'nonce': 'c4d7e22fb4ab9200e895da7f79b19011ef2adbd40334f6ba407cbff076406013',  
-                                                                                 'parent': '000062b962b4600f15a67f2461af7052f5132743ee56f53c3287703095e84f53',  
-                                                                                 'timestamp': 1587171183.502249},  
+node 8003 broadcasting  
+node 8004 broadcasting  
+node 8003 broadcasting  
+node 8000 broadcasting  
+node 8005 broadcasting  
+node 8005 - length 8 - head 000032454c7a6ee942e7730ad38f33a311b4264e76f7f683bb8819bbe870919f  
+node 8001 - length 8 - head 000032454c7a6ee942e7730ad38f33a311b4264e76f7f683bb8819bbe870919f  
+node 8002 - length 8 - head 000032454c7a6ee942e7730ad38f33a311b4264e76f7f683bb8819bbe870919f  
+node 8004 - length 8 - head 000032454c7a6ee942e7730ad38f33a311b4264e76f7f683bb8819bbe870919f  
+node 8003 - length 8 - head 000032454c7a6ee942e7730ad38f33a311b4264e76f7f683bb8819bbe870919f  
+node 8000 - length 8 - head 000032454c7a6ee942e7730ad38f33a311b4264e76f7f683bb8819bbe870919f  
+{'00001be563c5af60778148a111d303ee8cf9b03821313141f4295913e99aa0e0': {'header': {'index': 4,  
+                                                                                 'nonce': '625156d9bf6f9e7c451e0b286b708a693a96f73d1a3ca1e1d8ec5d304ec62896',  
+                                                                                 'parent': '000063449df568570c1bce4a4d68093908db8d51de92d9be618d58de870d6329',  
+                                                                                 'timestamp': 1587172017.846845},  
                                                                       'transactions': None},  
- '00001f8f96dc153d995cb31e326c14afb2f81eca19708a0212783a90fac69f86': {'header': {'index': 2,  
-                                                                                 'nonce': '8683d7e90b0eb5eb3447ccf420bb4ad84dee331fbb319ba8d47b769204d37352',   
-                                                                                 'parent': '000062082601001a808e1ca0d70492020d475024169d0e32e74ea984e57c31ed',  
-                                                                                 'timestamp': 1587171191.00553},  
+ '000027489cd5c2a08536c4ec6c9f79a6ede5d3436c8fdbead8c308a6b795e390': {'header': {'index': 6,  
+                                                                                 'nonce': '2cb38e757a0451c398e8acc093f00cce50ba3c5a39f944815596edcf7d91a688',  
+                                                                                 'parent': '00005db430ce79efcf4010323cfe062148aa942f670aacb811e99e37e41af194',  
+                                                                                 'timestamp': 1587172024.113337},  
                                                                       'transactions': None},  
- '00002124866efedcf5741651f24d732381f1ad85926ffafd56f6e3a27e182a1d': {'header': {'index': 1,  
-                                                                                 'nonce': '4d5d0cf987c5249ea0e0269a60cea028ee34070f11518596289c6526a25ce06b',  
-                                                                                 'parent': '000062b962b4600f15a67f2461af7052f5132743ee56f53c3287703095e84f53',  
-                                                                                 'timestamp': 1587171181.5489962},  
+ '000032454c7a6ee942e7730ad38f33a311b4264e76f7f683bb8819bbe870919f': {'header': {'index': 7,  
+                                                                                 'nonce': 'bde335801f6f56eda80e694c8118946df951d6ec7444c815426f4c4c84d903cf',  
+                                                                                 'parent': '000027489cd5c2a08536c4ec6c9f79a6ede5d3436c8fdbead8c308a6b795e390',  
+                                                                                 'timestamp': 1587172039.775552},  
                                                                       'transactions': None},  
- '00002575f1f45830dd3616715cabb0a31ef3b6e655f8ffe6ddc9668fed883425': {'header': {'index': 4,  
-                                                                                 'nonce': '32be33e9803cfa5aa98f32e4cb61c932b348336a5a37abd051c1010c41e9fb65',  
-                                                                                 'parent': '00004eea8a619c13b4fea6d1f4e5d7e6c563fc3984d2489c9315122449177e2d',  
-                                                                                 'timestamp': 1587171210.93948},    
+ '0000359dab4328c008050d59807bc632ae00e0a5f3641cf55562f11e8650bd0c': {'header': {'index': 2,  
+                                                                                 'nonce': '2c85326b1a6ceb493f4fcf15be56762ed8a6e5e60b5bcd33a6740a7e0f62697e',  
+                                                                                 'parent': '000069e8aa67b5989bc36e41d4faa415328d9874ee5cb52f0da10dea33d13c96',  
+                                                                                 'timestamp': 1587172006.317229},  
                                                                       'transactions': None},  
- '000028ff617837650daec28e931a76e9b7ab0fa0f529aa868ff49f6ef9f95775': {'header': {'index': 1,  
-                                                                                 'nonce': 'a0da7a0c7d2773cfeb1938e4d1d86a3e2020e175df5a5edd113d9717fdf4c3ba',  
-                                                                                 'parent': '000062b962b4600f15a67f2461af7052f5132743ee56f53c3287703095e84f53',  
-                                                                                 'timestamp': 1587171181.550148},  
-                                                                      'transactions': None},  
- '00003634f0edef4cef4fc61e0315894cb69df6ebfbac141febaa7747b0d98fa0': {'header': {'index': 1,  
-                                                                                 'nonce': 'd00157700ceef416b5ebb5fe7aa89bf57a74e58dbff74e06a6a192eae5c7af1b',  
-                                                                                 'parent': '000062b962b4600f15a67f2461af7052f5132743ee56f53c3287703095e84f53',  
-                                                                                 'timestamp': 1587171181.55019},  
-                                                                      'transactions': None},  
- '000044d9791d594f731b5f950f91749983d7ec0d5fa5b58de546893f809770d0': {'header': {'index': 1,  
-                                                                                 'nonce': '881249398bd9a7ff8bdfc8de8298f739b4749a30cd50e26868fbc8c7cbe118ff',  
-                                                                                 'parent': '000062b962b4600f15a67f2461af7052f5132743ee56f53c3287703095e84f53',  
-                                                                                 'timestamp': 1587171181.550101},  
-                                                                      'transactions': None},  
- '00004eea8a619c13b4fea6d1f4e5d7e6c563fc3984d2489c9315122449177e2d': {'header': {'index': 3,   
-                                                                                 'nonce': '74658c4c79c3637dd65886919b2b7586c92c77a72fbe1f802ab92062c87020a5',  
-                                                                                 'parent': '00001f8f96dc153d995cb31e326c14afb2f81eca19708a0212783a90fac69f86',  
-                                                                                 'timestamp': 1587171204.310577},  
-                                                                      'transactions': None},  
- '000062082601001a808e1ca0d70492020d475024169d0e32e74ea984e57c31ed': {'header': {'index': 1,  
-                                                                                 'nonce': '1f098d5c52201e870d5c2f3a70e25427fbd2d72f8ce6990715751dac0d366658',  
-                                                                                 'parent': '000062b962b4600f15a67f2461af7052f5132743ee56f53c3287703095e84f53',  
-                                                                                 'timestamp': 1587171181.552639},   
-                                                                      'transactions': None},  
- '000062b962b4600f15a67f2461af7052f5132743ee56f53c3287703095e84f53': {'header': {'index': 0,  
-                                                                                 'nonce': '6a192791992011e4b83cb8c1f5bc321ad99ff64f801d644a6a100e9bbe4f8468',  
+ '0000482a52f379e6b48cd7a3073dd71c34ed2127542e44abe9e9922111ba5495': {'header': {'index': 0,  
+                                                                                 'nonce': 'f4a3a6cf39e91569462c40573906aaaa8a443d9a93a7c0cb7bac2b9c48fa0213',  
                                                                                  'parent': 0,  
-                                                                                 'timestamp': 1587171176.540763},  
-                                                                      'transactions': []}}  
+                                                                                 'timestamp': 1587171972.350563},  
+                                                                      'transactions': []},  
+ '00005db430ce79efcf4010323cfe062148aa942f670aacb811e99e37e41af194': {'header': {'index': 5,  
+                                                                                 'nonce': '561aee47c952cb69d1b07d894a66dd7c06649353840b8dc1163e9b364c0017da',  
+                                                                                 'parent': '00001be563c5af60778148a111d303ee8cf9b03821313141f4295913e99aa0e0',  
+                                                                                 'timestamp': 1587172022.0193899},  
+                                                                      'transactions': None},  
+ '000063449df568570c1bce4a4d68093908db8d51de92d9be618d58de870d6329': {'header': {'index': 3,  
+                                                                                 'nonce': 'e66ae6186468d5a193184742df435b409d75d020bcd725b473f86d1232b5f0cd',  
+                                                                                 'parent': '0000359dab4328c008050d59807bc632ae00e0a5f3641cf55562f11e8650bd0c',  
+                                                                                 'timestamp': 1587172012.3535519},  
+                                                                      'transactions': None},  
+ '000069e8aa67b5989bc36e41d4faa415328d9874ee5cb52f0da10dea33d13c96': {'header': {'index': 1,  
+                                                                                 'nonce': '747ce9d2964af19cf893341c050b17971ced38d6b3fa7db66077b6b30086604e',  
+                                                                                 'parent': '0000482a52f379e6b48cd7a3073dd71c34ed2127542e44abe9e9922111ba5495',  
+                                                                                 'timestamp': 1587171988.029807},  
+                                                                      'transactions': None}}  
+  
+2)  
+  
+a) Why do so many more blocks appear in the list of all those known in the system? Why are there so many with the same index?  
+
+The variable DIFFICULTY is used to set the mining difficulty. In this case, this is implemented by checking for a block whose hash beats the difficulty parameter by having at least that many leading zeros. If a block that fulfills the difficulty parameter is not found within a certain limit of tries, then find_block returns (None, None). So, when the difficulty is lowered, 
+
+b) Do most or all of the nodes all exit with the same head of the chain? If so, how? If not, why can’t they agree?  
+

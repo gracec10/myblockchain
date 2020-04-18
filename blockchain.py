@@ -1,3 +1,7 @@
+# Homework 4 for CPSC 310
+# Grace Cheung
+# gvc8
+
 import socket
 import socketserver
 import threading
@@ -151,7 +155,8 @@ class Blockchain():
 
     # helper functions for TODOs
     def get_timestamp( self ):
-        return time.time()
+        time1 = time.time() - 1525015
+        return time1
 
     def get_nonce( self ):
         return secrets.token_hex( 32 )
@@ -235,16 +240,24 @@ class Blockchain():
 
         block = {
             'header' : {
-                'index'     : None, # the index of the block in the chain
-                'parent'    : None, # the digest (hash) of the parent block
-                'nonce'     : None, # a nonce (number used only once) to vary the hash during mining
-                'timestamp' : None, # the timestamp of the block
+                'index'     : index, # the index of the block in the chain
+                'parent'    : parent, # the digest (hash) of the parent block
+                'nonce'     : self.get_nonce(), # a nonce (number used only once) to vary the hash during mining
+                'timestamp' : self.get_timestamp(), # the timestamp of the block
             },
-            'transactions' : None,  # a list of transactions to be included in the block
+            'transactions' : txns,  # a list of transactions to be included in the block
         }
 
+        counter = 0 # count number of tries
+        while counter <= tries:
+            counter += 1
+            block['header']['nonce'] = self.get_nonce()
+            digest = self.hash_block(block)
+            num_zeros = self.leading(digest)
+            if num_zeros >= self.difficulty:
+                return (block, digest)
+        
         return ( None, None )
-
 
     # TODO
     def verify_block( self, block, digest ):
@@ -255,13 +268,32 @@ class Blockchain():
         ##
         ## Returns a boolean.
 
-        # check: something to do with the timestamp
-        # check: something to do with the hash
-        # check: something else to do with the hash
-        # check: something to do with the parent
-        # check: something to do with the parent/index
-        # (Part 3) check: something to do with the mining transaction
-        pass
+        parent = block['header']['parent'] # gives digest of parent
+
+        # only do checks if not the genesis block
+        if parent != 0:
+            # check: something to do with the timestamp
+            # I am checking if the timestamp of the current block is later than the timestamp of the parent block
+            if block['header']['timestamp'] < self.blocks[ parent ]['header']['timestamp']:
+                return False
+            # check: something to do with the hash
+            # I am checking that the hash is valid
+            if digest != self.hash_block(block):
+                return False
+            # check: something else to do with the hash
+            # I am checking that the hash beats the difficulty parameter
+            if self.leading(digest) < self.difficulty:
+                return False
+            # check: something to do with the parent
+            # I am checking that the parent hash does not equal the curent block's hash
+            if digest == parent:
+                return False
+            # check: something to do with the parent/index
+            # I am checking that the index of the current block is greater than the parent index
+            if block['header']['index'] <= self.blocks[ parent ]['header']['index']:
+                return False
+            # (Part 3) check: something to do with the mining transaction
+        return True
 
 
     # TODO
@@ -283,6 +315,28 @@ class Blockchain():
         ##
         ## Does not return.
         ##
+
+        self.curr_length = 1
+
+        def count_length(curr_digest):
+            # function to count length of chain
+            parent_digest = self.blocks[curr_digest]['header']['parent']
+            if parent_digest != 0:
+                self.curr_length += 1
+                count_length(parent_digest)
+            else:
+                return
+
+        while not self.pending.empty():
+            curr_digest = self.pending.get()
+            curr_block = self.blocks[ curr_digest ]
+
+            if self.verify_block( curr_block, curr_digest ) == True:
+                count_length(curr_digest)
+                if self.curr_length > self.length:
+                    self.head = curr_digest
+                    self.length = self.curr_length
+
         ## For Part 3, your code has the additional task of making sure
         ## `self.wallet` contains all and only those coins belonging to
         ## the node on the longest chain. For this assignment you _do not_
